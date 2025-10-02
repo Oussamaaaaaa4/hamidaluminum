@@ -1,0 +1,613 @@
+/* ===============================================
+   HAMID ALUMINUM - ANIMATED BACKGROUND & PORTFOLIO
+   =============================================== */
+
+/* RTL Support */
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Animated Aluminum Background */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* Floating Aluminum Shapes */
+.floating-aluminum {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 20s infinite linear;
+}
+
+.aluminum-sheet {
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(45deg, #bdc3c7, #ecf0f1);
+    border-radius: 4px;
+    top: 10%;
+    left: 10%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation-duration: 25s;
+}
+
+.aluminum-tube {
+    width: 20px;
+    height: 150px;
+    background: linear-gradient(90deg, #95a5a6, #bdc3c7);
+    border-radius: 10px;
+    top: 20%;
+    right: 15%;
+    animation-duration: 30s;
+    animation-direction: reverse;
+}
+
+.aluminum-profile {
+    width: 100px;
+    height: 15px;
+    background: linear-gradient(45deg, #7f8c8d, #95a5a6);
+    top: 60%;
+    left: 20%;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+    animation-duration: 35s;
+}
+
+.aluminum-angle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid #95a5a6;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    top: 70%;
+    right: 25%;
+    animation-duration: 28s;
+    animation-direction: reverse;
+}
+
+.aluminum-pipe {
+    width: 15px;
+    height: 120px;
+    background: linear-gradient(0deg, #ecf0f1, #bdc3c7);
+    border-radius: 7px;
+    top: 40%;
+    left: 70%;
+    animation-duration: 32s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+    }
+}
+
+/* Particles Effect */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+        radial-gradient(2px 2px at 40px 70px, #ffffff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+        radial-gradient(1px 1px at 130px 80px, #ffffff, transparent),
+        radial-gradient(2px 2px at 160px 30px, #ffffff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: sparkle 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* WhatsApp Button Styles */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.btn-whatsapp i {
+    font-size: 1.2em;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Hero Section Updates */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ecf0f1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.hero-subtitle-en {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #bdc3c7;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Portfolio Section */
+.portfolio-gallery {
+    padding: 80px 0;
+    background: white;
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.portfolio-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(45deg, #bdc3c7, #ecf0f1);
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-image::before {
+    content: '📷';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.portfolio-content {
+    padding: 25px;
+}
+
+.portfolio-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.portfolio-description {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.portfolio-category {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Section Headers */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-title-en {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle-en {
+    font-size: 1rem;
+    color: #95a5a6;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle-en {
+        font-size: 1.3rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .portfolio-filters {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    .floating-aluminum {
+        opacity: 0.05;
+    }
+}
+
+/* Loading animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Arabic text improvements */
+.service-card h3,
+.portfolio-title,
+.section-title {
+    font-family: 'Cairo', 'Amiri', Arial, sans-serif;
+}
+
+/* Enhanced hover effects */
+.service-card:hover .service-icon {
+    transform: rotateY(180deg);
+}
+
+.service-icon {
+    transition: transform 0.6s ease;
+}
+
+/* Instagram Button Styles */
+.btn-instagram {
+    background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+}
+
+.btn-instagram:hover {
+    background: linear-gradient(135deg, #C13584, #833AB4, #5851DB);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+    color: white;
+}
+
+.service-instagram {
+    background: linear-gradient(135deg, #E1306C, #C13584);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-instagram:hover {
+    background: linear-gradient(135deg, #C13584, #833AB4);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Service Actions */
+.service-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Social Navigation Buttons */
+.social-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.instagram-btn {
+    background: linear-gradient(135deg, #E1306C, #C13584);
+}
+
+.instagram-btn:hover {
+    background: linear-gradient(135deg, #C13584, #833AB4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+}
+
+/* Floating Contact Buttons */
+.contact-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.floating-whatsapp,
+.floating-instagram {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: bounce 2s infinite;
+}
+
+.floating-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.floating-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+}
+
+.floating-instagram {
+    background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+}
+
+.floating-instagram:hover {
+    background: linear-gradient(135deg, #C13584, #833AB4, #5851DB);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(225, 48, 108, 0.5);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Contact Buttons Group */
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
